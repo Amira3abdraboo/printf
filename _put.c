@@ -19,7 +19,7 @@ int _puts(char *string)
 }
 
 /**
- * _putchar - writes the character c to stdout
+ * _putchar - writes the character
  *
  * @c: The character to print
  *
@@ -36,6 +36,8 @@ int _putchar(int c)
 		j = 0;
 	}
 	if (c != BUF_FLUSH)
+	{
 		buf[j++] = c;
+	}
 	return (1);
 }
