@@ -45,22 +45,34 @@ int print_number(char *string, params_t *params)
 	int neg = (!params->unsign && *string == '-');
 
 	if (!params->precision && *string == '0' && !string[1])
+	{
 		string = "";
+	}
 	if (neg)
 	{
 		string++;
 		a--;
 	}
 	if (params->precision != UINT_MAX)
+	{
 		while (a++ < params->precision)
+		{
 			*--string = '0';
+		}
+	}
 	if (neg)
+	{
 		*--string = '-';
+	}
 
 	if (!params->minus_flag)
+	{
 		return (print_number_right_shift(string, params));
+	}
 	else
+	{
 		return (print_number_left_shift(string, params));
+	}
 }
 
 /**
