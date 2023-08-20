@@ -108,8 +108,8 @@ int print_octal(va_list list, params_t *params);
 /* simple_printers.c module */
 
 int print_from_to(char *start, char *stop, char *except);
-int print_rev(va_list ap, params_t *params);
-int print_rot13(va_list ap, params_t *params);
+int print_rev(va_list list, params_t *params);
+int print_rot13(va_list list, params_t *params);
 
 /* print_number.c module */
 
@@ -125,7 +125,7 @@ void init_params(params_t *params, va_list list);
 
 /* string_fields.c modoule */
 
-char *get_precision(char *p, params_t *params, va_list ap);
+char *get_precision(char *f, params_t *params, va_list list);
 
 /* _prinf.c module */
 
