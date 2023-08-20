@@ -19,17 +19,23 @@ char *get_precision(char *f, params_t *params, va_list list)
 	{
 		return (f);
 	}
+
 	f++;
+
 	if (*f == '*')
 	{
 		i = va_arg(list, int);
 		f++;
 	}
-	else
+	else if (_isdigit(*f))
 	{
 		while (_isdigit(*f))
+		{
 			i = i * 10 + (*f++ - '0');
+		}
 	}
+
 	params->precision = i;
+
 	return (f);
 }
