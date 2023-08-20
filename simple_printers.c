@@ -1,64 +1,70 @@
 #include "main.h"
 
 /**
- * print_from_to - prints a range of char addresses
- * @start: starting address
- * @stop: stopping address
- * @except: except address
+ * print_from_to - prints char addresses
+ * @start: starting add
+ * @stop: stopping add
+ * @except: except add
  *
  * Return: number bytes printed
  */
 int print_from_to(char *start, char *stop, char *except)
 {
-	int sum = 0;
+	int summ = 0;
 
 	while (start <= stop)
 	{
 		if (start != except)
-			sum += _putchar(*start);
+		{
+			summ += _putchar(*start);
+		}
 		start++;
 	}
-	return (sum);
+	return (summ);
 }
 
 /**
  * print_rev - prints string in reverse
- * @ap: string
+ *
+ * @list: string
+ *
  * @params: the parameters struct
  *
- * Return: number bytes printed
+ * Return: bytes printed
  */
-int print_rev(va_list ap, params_t *params)
+int print_rev(va_list list, params_t *params)
 {
-	int len, sum = 0;
-	char *str = va_arg(ap, char *);
+	int length, summ = 0;
+	char *string = va_arg(list, char *);
 	(void)params;
 
-	if (str)
+	if (string)
 	{
-		for (len = 0; *str; str++)
-			len++;
-		str--;
-		for (; len > 0; len--, str--)
-			sum += _putchar(*str);
+		for (length = 0; *string; string++)
+			length++;
+		string--;
+		for (; length > 0; length--, string--)
+			summ += _putchar(*string);
 	}
-	return (sum);
+	return (summ);
 }
 
 /**
- * print_rot13 - prints string in rot13
- * @ap: string
+ * print_rot13 - prints in rot13
+ *
+ * @list: pointer
+ *
  * @params: the parameters struct
  *
- * Return: number bytes printed
+ * Return: bytes printed
  */
-int print_rot13(va_list ap, params_t *params)
+int print_rot13(va_list list, params_t *params)
 {
 	int i, index;
 	int count = 0;
 	char arr[] =
 		"NOPQRSTUVWXYZABCDEFGHIJKLM      nopqrstuvwxyzabcdefghijklm";
-	char *a = va_arg(ap, char *);
+	char *a = va_arg(list, char *);
 	(void)params;
 
 	i = 0;
