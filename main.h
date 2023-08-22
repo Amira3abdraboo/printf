@@ -69,7 +69,6 @@ typedef struct specifier
 {
 	char *specifier;
 	int (*f)(va_list, params_t *);
-
 } specifier_t;
 
 /* _put.c module */
