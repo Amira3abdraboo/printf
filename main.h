@@ -1,9 +1,9 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <stdarg.h>
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <stdarg.h>
 #include <unistd.h>
 #include <limits.h>
 
@@ -69,6 +69,7 @@ typedef struct specifier
 {
 	char *specifier;
 	int (*f)(va_list, params_t *);
+
 } specifier_t;
 
 /* _put.c module */
